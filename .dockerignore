@@ -12,4 +12,4 @@ venv
 .vscode
 .DS_Store
 *.pdf
-app/data/samples/*
+data/samples/*
