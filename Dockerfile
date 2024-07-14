@@ -17,4 +17,4 @@ RUN python -m nltk.downloader stopwords
 EXPOSE 8501
 
 # Run streamlit when the container launches
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "app/streamlit_app.py"]

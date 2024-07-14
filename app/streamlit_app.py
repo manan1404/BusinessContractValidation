@@ -2,12 +2,16 @@
 import os
 import sys
 import streamlit as st
+import nltk
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
 from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
+
+# Download NLTK stopwords if not already present
+nltk.download('stopwords')
 
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"
