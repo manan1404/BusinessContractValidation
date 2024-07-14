@@ -43,7 +43,7 @@ Modify the absolute path in app.py (line 5) to reflect the path of scripts in yo
 
 1. Run the Streamlit app:
     ```bash
-    streamlit run app.py
+    streamlit run streamlit_app.py
     ```
 
 2. Open your web browser and go to `http://localhost:8501`.
