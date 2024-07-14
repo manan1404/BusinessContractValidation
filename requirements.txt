@@ -1,5 +1,4 @@
 PyMuPDF
-fitz
 nltk
 streamlit
 google-generativeai
