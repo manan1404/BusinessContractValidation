@@ -1,20 +1,5 @@
-datasets
-scikit-learn
-pandas
-spacy
-streamlit
+PyMuPDF
 fitz
-fastapi
-pytesseract
-pillow
-pdfplumber
-reportlab
-transformers
-tabula
-tabula-py
-spacy
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
-pdfplumber
-uvicorn
-openai
-google.generativeai
+nltk
+streamlit
+google-generativeai

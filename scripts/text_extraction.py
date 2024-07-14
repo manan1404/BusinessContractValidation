@@ -1,15 +1,15 @@
-import pdfplumber
+#scripts/text_extraction.py
 
-def extract_text_from_pdf(pdf_file):
-    """Extract text from a PDF file."""
-    text = ""
-    with pdfplumber.open(pdf_file) as pdf:
-        for page in pdf.pages:
-            text += page.extract_text()
-    return text
+import string
+from nltk.corpus import stopwords
 
+def remove_stopwords(word_list):
+    stop_words = set(stopwords.words('english'))
+    filtered_words = [word for word in word_list if word.lower() not in stop_words]
+    return filtered_words
 
-def preprocess_text(texts):
-    """Preprocess text eg -> converting to lowercase)."""
-    return [text.lower() for text in texts]
-
+def formatter(text):
+    translator = str.maketrans('', '', string.punctuation)
+    text_no_punct = text.translate(translator)
+    text_no_newlines = text_no_punct.replace('\n', ' ').replace('\r', '')
+    return text_no_newlines
