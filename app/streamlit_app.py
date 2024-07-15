@@ -10,9 +10,8 @@ from pdf_highlighting import highlight_differences
 # Load environment variables from .env file
 load_dotenv()
 
-# Load NLTK stopwords if not already present
+# Set NLTK data path
 nltk.data.path.append("/usr/share/nltk_data")
-nltk.download('stopwords')
 
 # Get the API key from Streamlit secrets
 api_key = st.secrets["API_KEY"]
