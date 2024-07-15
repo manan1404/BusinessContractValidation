@@ -1,8 +1,8 @@
-# app/streamlit_app.py
 import os
 import sys
 import streamlit as st
 import nltk
+from nltk.corpus import stopwords
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
@@ -10,8 +10,11 @@ from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
 
-# Download NLTK stopwords if not already present
-nltk.download('stopwords')
+# Check if stopwords are already downloaded
+try:
+    stopwords.words('english')
+except LookupError:
+    nltk.download('stopwords')
 
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"
