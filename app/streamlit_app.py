@@ -1,3 +1,5 @@
+import os
+import sys
 import streamlit as st
 import nltk
 from nltk.corpus import stopwords
@@ -5,6 +7,9 @@ from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
+from pdf_highlighting import highlight_differences
 
 # Initialize NLTK stopwords if not already present
 try:
@@ -14,6 +19,8 @@ except LookupError:
 
 # Get the API key from Streamlit secrets
 api_key = st.secrets["API_KEY"]
+
+st.title("Business Contract Validation")
 
 if not api_key:
     st.error("API Key not found. Please set the API_KEY in Streamlit secrets.")
