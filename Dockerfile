@@ -16,7 +16,10 @@ RUN apt-get update && apt-get install -y \
         wget \
         && rm -rf /var/lib/apt/lists/*
 
-RUN python -m nltk.downloader stopwords
+RUN python -m nltk.downloader -d /usr/share/nltk_data stopwords
+
+# Set NLTK_DATA environment variable
+ENV NLTK_DATA /usr/share/nltk_data
 
 # Expose port 8501 to the outside world
 EXPOSE 8501
