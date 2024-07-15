@@ -1,4 +1,3 @@
 # .gitignore
 /venv/
-.env
 app/.streamlit/secrets.toml
