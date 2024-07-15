@@ -14,7 +14,7 @@ st.title("Business Contract Validation")
 try:
     stopwords.words('english')
 except LookupError:
-    nltk.download('stopwords')
+    st.error("NLTK stopwords are not available. Please ensure they are downloaded.")
 
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"
