@@ -2,21 +2,13 @@
 import os
 import sys
 import streamlit as st
-import nltk
 from dotenv import load_dotenv
-from nltk.data import find
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
 from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
-
-# Check if stopwords are already downloaded
-try:
-    find('corpora/stopwords.zip')
-except LookupError:
-    nltk.download('stopwords')
 
 # Load environment variables from .env file
 load_dotenv()

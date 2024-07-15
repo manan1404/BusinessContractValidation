@@ -16,5 +16,8 @@ RUN python -m nltk.downloader stopwords
 # Expose port 8501 to the outside world
 EXPOSE 8501
 
+# Set the API_KEY environment variable
+ENV API_KEY=your_actual_api_key_here
+
 # Run streamlit when the container launches
 CMD ["streamlit", "run", "app/streamlit_app.py"]
