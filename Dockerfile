@@ -13,9 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Download NLTK data
 RUN python -m nltk.downloader stopwords
 
-# Set the API_KEY environment variable
-ENV API_KEY=your_actual_api_key_here
-
 # Expose port 8501 to the outside world
 EXPOSE 8501
 
