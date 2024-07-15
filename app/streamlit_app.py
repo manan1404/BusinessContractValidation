@@ -4,6 +4,7 @@ import streamlit as st
 import nltk
 from nltk.corpus import stopwords
 
+# Add the scripts directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 from pdf_highlighting import highlight_differences
 
