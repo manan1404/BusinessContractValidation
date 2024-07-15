@@ -1,18 +1,18 @@
+#app/streamlit_app.py
 import os
 import sys
 import streamlit as st
-import nltk
 from nltk.corpus import stopwords
 from dotenv import load_dotenv
+
+import nltk
+nltk.download('stopwords')
 
 # Load environment variables from .env file
 load_dotenv()
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 from pdf_highlighting import highlight_differences
-
-# Download NLTK stopwords if not already present
-nltk.download('stopwords')
 
 # Get the API key from Streamlit secrets
 api_key = st.secrets["API_KEY"]
