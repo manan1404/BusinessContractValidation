@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir -p $NLTK_DATA
 
 # Download NLTK stopwords
-RUN python -m nltk.downloader -d $NLTK_DATA stopwords
+RUN python -c "import nltk; nltk.download('stopwords', download_dir='$NLTK_DATA')"
 
 # Expose port 8501 to the outside world
 EXPOSE 8501
