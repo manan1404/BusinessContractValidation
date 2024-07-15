@@ -2,7 +2,7 @@
 import os
 import sys
 import streamlit as st
-from dotenv import load_dotenv
+import nltk
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
@@ -10,11 +10,11 @@ from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
 
-# Load environment variables from .env file
-load_dotenv()
+# Set the NLTK data path
+nltk.data.path.append("/usr/share/nltk_data")
 
-# Get the API key from environment variables
-api_key = os.getenv("API_KEY")
+# Get the API key from Streamlit secrets
+api_key = st.secrets["API_KEY"]
 
 if not api_key:
     st.error("API Key not found. Please set the API_KEY environment variable.")
