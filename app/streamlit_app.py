@@ -4,6 +4,9 @@ import streamlit as st
 import nltk
 from nltk.corpus import stopwords
 
+# Set the NLTK data path
+nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
 from pdf_highlighting import highlight_differences
@@ -15,6 +18,7 @@ try:
     stopwords.words('english')
 except LookupError:
     st.error("NLTK stopwords are not available. Please ensure they are downloaded.")
+    st.stop()
 
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"
