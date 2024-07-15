@@ -10,7 +10,7 @@ from pdf_highlighting import highlight_differences
 # Load environment variables from .env file
 load_dotenv()
 
-# Set NLTK data path
+# Set NLTK data path explicitly
 nltk.data.path.append("/usr/share/nltk_data")
 
 # Get the API key from Streamlit secrets
