@@ -5,7 +5,7 @@ import nltk
 from nltk.corpus import stopwords
 
 # Set the NLTK data path
-nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
+nltk.data.path.append('/usr/share/nltk_data')
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
