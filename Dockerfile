@@ -10,8 +10,9 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Download NLTK data
-RUN python -m nltk.downloader stopwords
+# Create a directory for NLTK data and download stopwords
+RUN mkdir /usr/share/nltk_data
+RUN python -m nltk.downloader -d /usr/share/nltk_data stopwords
 
 # Expose port 8501 to the outside world
 EXPOSE 8501
