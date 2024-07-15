@@ -1,23 +1,22 @@
-# app/streamlit_app.py
-import os
-import sys
 import streamlit as st
 import nltk
+from nltk.corpus import stopwords
+from dotenv import load_dotenv
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
+# Load environment variables from .env file
+load_dotenv()
 
-from pdf_highlighting import highlight_differences
-
-st.title("Business Contract Validation")
-
-# Set the NLTK data path
-nltk.data.path.append("/usr/share/nltk_data")
+# Initialize NLTK stopwords if not already present
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 # Get the API key from Streamlit secrets
 api_key = st.secrets["API_KEY"]
 
 if not api_key:
-    st.error("API Key not found. Please set the API_KEY environment variable.")
+    st.error("API Key not found. Please set the API_KEY in Streamlit secrets.")
 else:
     pdf1 = st.file_uploader("Upload the first PDF", type="pdf")
     pdf2 = st.file_uploader("Upload the second PDF", type="pdf")
