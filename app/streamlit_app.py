@@ -1,23 +1,17 @@
+# app/streamlit_app.py
 import os
 import sys
 import streamlit as st
 import nltk
-from nltk.corpus import stopwords
 
-# Add the scripts directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
+
 from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
 
-# Ensure NLTK stopwords are available
-nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
-if not os.path.exists(os.path.join(nltk_data_path, 'corpora/stopwords')):
-    os.makedirs(nltk_data_path, exist_ok=True)
-    nltk.download('stopwords', download_dir=nltk_data_path)
-
-# Set the NLTK_DATA environment variable to the local directory
-os.environ['NLTK_DATA'] = nltk_data_path
+# Download NLTK stopwords if not already present
+nltk.download('stopwords')
 
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"

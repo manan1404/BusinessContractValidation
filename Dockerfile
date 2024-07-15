@@ -1,4 +1,3 @@
-# Dockerfile
 # Use the official Python image from the Docker Hub
 FROM python:3.9-slim
 
@@ -10,6 +9,9 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Download NLTK data
+RUN python -m nltk.downloader stopwords
 
 # Expose port 8501 to the outside world
 EXPOSE 8501
