@@ -9,6 +9,11 @@ from pdf_highlighting import highlight_differences
 
 st.title("Business Contract Validation")
 
+# Ensure NLTK stopwords are available
+nltk_data_path = os.getenv('NLTK_DATA', '/usr/share/nltk_data')
+if not os.path.exists(os.path.join(nltk_data_path, 'corpora/stopwords')):
+    nltk.download('stopwords', download_dir=nltk_data_path)
+
 # api_key = st.text_input("Enter your API Key", type="password")
 api_key = "REMOVED"
 
