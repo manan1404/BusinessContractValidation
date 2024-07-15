@@ -11,11 +11,8 @@ load_dotenv()
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 from pdf_highlighting import highlight_differences
 
-# Initialize NLTK stopwords if not already present
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+# Download NLTK stopwords if not already present
+nltk.download('stopwords')
 
 # Get the API key from Streamlit secrets
 api_key = st.secrets["API_KEY"]
