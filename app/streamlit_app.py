@@ -3,10 +3,12 @@ import os
 import sys
 import streamlit as st
 import nltk
+from dotenv import load_dotenv
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'scripts')))
 
 from pdf_highlighting import highlight_differences
+load_dotenv()
 
 st.title("Business Contract Validation")
 
@@ -14,7 +16,7 @@ st.title("Business Contract Validation")
 nltk.download('stopwords')
 
 # api_key = st.text_input("Enter your API Key", type="password")
-api_key = "REMOVED"
+api_key = os.getenv("API_KEY")
 
 pdf1 = st.file_uploader("Upload the first PDF", type="pdf")
 pdf2 = st.file_uploader("Upload the second PDF", type="pdf")
