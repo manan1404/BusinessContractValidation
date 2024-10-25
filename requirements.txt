@@ -2,3 +2,4 @@ PyMuPDF
 nltk
 streamlit
 google-generativeai
+python-dotenv
