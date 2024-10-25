@@ -12,7 +12,7 @@ This project aims to compare two business contract PDF files and highlight the d
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/BusinessContractValidation.git
+    git clone https://github.com/manan1404/BusinessContractValidation.git
     cd BusinessContractValidation
     ```
 
